@@ -1,0 +1,21 @@
+{
+  "name": "behave-pro-js",
+  "version": "0.0.1",
+  "description": "Behave Pro JS exporter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hindsight Software Ltd",
+  "license": "MIT",
+  "dependencies": {
+    "minimist": "^1.1.1",
+    "mkdirp": "^0.5.1",
+    "request": "^2.58.0",
+    "underscore": "^1.8.3",
+    "unzip2": "^0.2.5"
+  },
+  "bin": {
+    "behavepro": "bin/cli.js"
+  }
+}
