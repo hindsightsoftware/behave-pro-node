@@ -3,18 +3,19 @@
 var BehavePro = require('../lib/behavepro');
 var args = require('minimist')(process.argv.slice(2));
 var packageJson = require('../package.json');
+var chalk = require('chalk');
 
 if (args.help) {
     console.log(
-        'Behave Pro NodeJS client v' + packageJson.version + '\n'+
+        chalk.cyan('Behave Pro NodeJS client v' + packageJson.version) + '\n\n' +
         '$ behavepro [--id PROJECT ID] [--userId USER] [--apiKey KEY]\n\n' +
-        '[--host HOST]         Behave Pro host - default: \'http://behave.pro\'\n' +
-        '[--id PROJECT ID]     JIRA project id\n' +
-        '[--userId USER]       Behave Pro user id\n' +
-        '[--apiKey KEY]        Behave Pro api key\n' +
-        '[--output DIRECTORY]  Output directory - default: \'features\'\n' +
-        '[--manual]            Include scenarios marked as manual\n' +
-        '[--config CONFIG]     JSON config file - relative to current directory\n' +
+        '   [--host HOST]         Behave Pro host - default: \'http://behave.pro\'\n' +
+        '   [--id PROJECT ID]     JIRA project id\n' +
+        '   [--userId USER]       Behave Pro user id\n' +
+        '   [--apiKey KEY]        Behave Pro api key\n' +
+        '   [--output DIRECTORY]  Output directory - default: \'features\'\n' +
+        '   [--manual]            Include scenarios marked as manual\n' +
+        '   [--config CONFIG]     JSON config file - relative to current directory\n\n' +
         'Further docs at http://docs.behave.pro'
     );
     return;
@@ -30,7 +31,6 @@ var settings = {
     config: args.config || 'config.json'
 };
 
-// if these aren't defined, attempt to read them from config.json
 if (settings.id && settings.userId && settings.apiKey) {
     BehavePro.fetchFeatures(settings);
 } else {

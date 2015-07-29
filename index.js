@@ -13,7 +13,6 @@ var defaultSettings = {
 module.exports = function(settings, callback) {
     _.defaults(settings, defaultSettings);
     BehavePro.fetchFeatures(settings, function() {
-        console.log(settings);
         if (callback) callback();
     });
 }
