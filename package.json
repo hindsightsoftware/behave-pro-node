@@ -1,6 +1,6 @@
 {
   "name": "behave-pro-js",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Behave Pro JS exporter",
   "main": "index.js",
   "scripts": {
